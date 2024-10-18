@@ -20,6 +20,14 @@ O objetivo principal deste projeto é demonstrar como a Transformada de Fourier 
 
 - Geração do Sinal de ECG: O projeto contém funções para gerar sinais de ECG, que incluem as ondas P, QRS e T. Uma função adicional gera um sinal com uma frequência intrusa, simulando uma condição anormal do coração. Ambos os sinais foram gerados por inteligência artificial para fins de simulação.
 
+  - Para escolher qual sinal gerar (normal ou com problema), basta descomentar a chamada da função correspondente e comentar a que não será utilizada. Veja o exemplo abaixo:
+
+  ```python
+  # Gerar o sinal de ECG normal ou sinal com problema
+  #ECG = gerarSinalECG(fs=fs, duration=duration, heart_rate=heart_rate)  # Sinal normal
+  ECG = gerarSinalECGComProblema(fs=fs, duration=duration, heart_rate=heart_rate, intrusao_freq=10.0)  # Sinal com problema
+  ```
+
 - Cálculo da Transformada de Fourier: A Transformada de Fourier é aplicada ao sinal de ECG, e a magnitude da TF é analisada para identificar a frequência dominante.
 
 - Visualização: O projeto plota gráficos dos sinais no domínio do tempo e das frequências, incluindo a frequência dominante marcada.
